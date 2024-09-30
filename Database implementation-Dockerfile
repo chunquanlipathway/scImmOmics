@@ -1,0 +1,24 @@
+
+FROM tomcatr:v1
+#FROM enid:latest
+
+#维护者
+MAINTAINER liweiz10@163.com
+ 
+ADD scImmAtlas.war /home/tomcat/apache-tomcat-8.5.78/webapps/
+ 
+#端口
+EXPOSE 8080
+
+#设置启动命令
+ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/home/tomcat/apache-tomcat-8.5.78/bin/catalina.sh","run"]
+#-v /mnt/data2/workspace/scImmRef:/home/scImmRef/
+
+#镜像构建,enid是镜像名
+#docker run -it --entrypoint /bin/bash enid
+#记住docker容器ID
+#配置容器内部环境888一顿配置
+#docker容器打包为镜像 -a:创建人 -m:描述 ENID:容器名 enid:v1:镜像名:版本号(镜像名应为小写)
+#docker commit -a "zhouliwei" -m "enid images" 容器ID enid:latest
+#docker images查看镜像ID
